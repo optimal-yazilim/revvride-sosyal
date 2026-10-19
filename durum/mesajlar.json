@@ -1,16 +1,9 @@
 {
   "izin": true,
   "yanitlanan": {
-    "86d0be9a8a3ee538": "2026-10-12T10:48:56.135Z",
     "c692c34d0bdac022": "2026-10-14T08:43:53.780Z"
   },
   "konusma": {
-    "233c6876110fb851": {
-      "zaman": "2026-10-12T10:48:56.135Z",
-      "konu": "nasil-kullanilir",
-      "gun": "2026-10-12",
-      "sayi": 1
-    },
     "f8aca3b2722aa799": {
       "zaman": "2026-10-14T08:43:53.780Z",
       "konu": "cikis",
@@ -26,7 +19,7 @@
     "nasil-kullanilir": 1
   },
   "insan_bekleyen": 2,
-  "son_kontrol": "2026-10-19T10:38:10.911Z",
+  "son_kontrol": "2026-10-19T10:52:30.143Z",
   "gorunen": {
     "konusma": 6,
     "son_24_saat": 0
