@@ -1,11 +1,24 @@
 {
-  "guncellendi": "2026-10-20T10:55:54.713Z",
+  "guncellendi": "2026-10-21T07:02:06.607Z",
   "hesap": {
     "kullanici": "revvrideapp",
     "takipci": 335,
-    "gonderi_sayisi": 10
+    "gonderi_sayisi": 11
   },
   "gonderiler": [
+    {
+      "takvim_id": "04-20ekim-motor-dostu-mekanlar",
+      "tarih": "2026-10-20T17:09:54+0000",
+      "tur": "CAROUSEL_ALBUM",
+      "ilk_satir": "Pazar kahvaltısı için motorcuyu seven bir yer mi arıyorsun? ☕",
+      "begeni": 0,
+      "yorum": 0,
+      "erisim": 5,
+      "kaydetme": 0,
+      "paylasim": 0,
+      "etkilesim": 0,
+      "baglanti": "https://www.instagram.com/p/DeuViivlo-G/"
+    },
     {
       "takvim_id": "18ekim-surus-haritasi",
       "tarih": "2026-10-18T07:10:22+0000",
