@@ -1,13 +1,34 @@
 {
-  "zaman": "2026-10-13T19:12:14.586Z",
+  "zaman": "2026-10-24T09:02:11.888Z",
   "sonuc": {
-    "18ekim-surus-haritasi": "çizildi (3 kare)",
-    "10kasim-anma": "değişmedi",
-    "11kasim-yagmurda-surus": "değişmedi",
-    "12kasim-yagmurda-surer-misin": "değişmedi",
-    "14kasim-kulubunu-kur": "değişmedi",
-    "hikaye-13kasim-yagmurluk": "değişmedi",
-    "hikaye-9ekim-merhaba": "değişmedi",
-    "hikaye-9kasim-islak-zemin": "değişmedi"
-  }
+    "07-27ekim-konvoy": "çizildi (1 kare)",
+    "09-31ekim-tehlikeler": "çizildi (4 kare)",
+    "10-3kasim-kis-bakimi": "çizildi (4 kare)",
+    "10kasim-anma": "çizildi (1 kare)",
+    "11-5kasim-rotaya-cevir": "çizildi (5 kare)",
+    "11kasim-yagmurda-surus": "çizildi (7 kare)",
+    "12-7kasim-sezonun-yolu": "çizildi (1 kare)",
+    "12kasim-yagmurda-surer-misin": "çizildi (1 kare)",
+    "14kasim-kulubunu-kur": "çizildi (6 kare)",
+    "hikaye-05-26ekim-kirmizida-dur": "çizildi (1 kare)",
+    "hikaye-06-28ekim-konvoy-kurallari": "çizildi (1 kare)",
+    "hikaye-07-2kasim-aku": "çizildi (1 kare)",
+    "hikaye-08-6kasim-kisin-surenler": "çizildi (1 kare)",
+    "hikaye-13kasim-yagmurluk": "çizildi (1 kare)",
+    "hikaye-9kasim-islak-zemin": "çizildi (1 kare)",
+    "18ekim-surus-haritasi": "değişmedi",
+    "hikaye-9ekim-merhaba": "değişmedi"
+  },
+  "profil": [
+    "2026-10-27 acik 07-27ekim-konvoy",
+    "2026-10-29 kirmizi 08-29ekim-cumhuriyet",
+    "2026-10-31 acik 09-31ekim-tehlikeler",
+    "2026-11-03 turuncu 10-3kasim-kis-bakimi",
+    "2026-11-05 acik 11-5kasim-rotaya-cevir",
+    "2026-11-07 turuncu 12-7kasim-sezonun-yolu",
+    "2026-11-10 koyu 10kasim-anma",
+    "2026-11-11 turuncu 11kasim-yagmurda-surus",
+    "2026-11-12 acik 12kasim-yagmurda-surer-misin",
+    "2026-11-14 turuncu 14kasim-kulubunu-kur"
+  ]
 }
