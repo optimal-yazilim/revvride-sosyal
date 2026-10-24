@@ -1,0 +1,11 @@
+{
+  "id": "12-7kasim-sezonun-yolu",
+  "zaman": "2026-11-07T10:00:00+03:00",
+  "tur": "gonderi",
+  "baslik": "Bu sezonun en güzel yolu",
+  "metin": "Sezon yavaş yavaş kapanıyor. Bu yıl seni en çok hangi yol mutlu etti? 🛣️\n\nİl ve yol adıyla yorumlara yaz; herkes gelecek bahar için listesine eklesin 👇\n\n#RevvRide #virajlıyollar #motosiklet #motorcu #rota",
+  "alt": "Koyu zeminde virajlı yol çizgisi ve \"Bu sezonun en güzel yolu hangisiydi?\" sorusu.",
+  "kareler": [
+    { "sablon": "soru", "baslik": "Bu sezonun en güzel yolu hangisiydi?", "metin": "İl ve yol adıyla yorumlara yaz; herkes gelecek bahar için listesine eklesin." }
+  ]
+}

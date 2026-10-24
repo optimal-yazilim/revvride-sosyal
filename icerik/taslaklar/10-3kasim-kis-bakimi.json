@@ -1,0 +1,14 @@
+{
+  "id": "10-3kasim-kis-bakimi",
+  "zaman": "2026-11-03T20:00:00+03:00",
+  "tur": "kaydirmali",
+  "baslik": "Motoru kışa hazırla: 7 madde",
+  "metin": "Sezonu kapatıyorsan motoru öylece garaja çekme. 🔧\n\nAkü, yakıt, lastik, zincir, yağ, antifriz, örtü: 7 maddelik kış listesi kaydırınca. Kaydet, baharda teşekkür edersin.\n\nSen kışın da sürüyor musun, yoksa motor dinlenmede mi? Yorumlara yaz 👇\n\n#RevvRide #motosiklet #motorbakımı #motorcu #kış",
+  "alt": "Motosikleti kışa hazırlamak için 7 madde: akü, yakıt, lastik, zincir, yağ, antifriz, örtü.",
+  "kareler": [
+    { "sablon": "kapak", "baslik": "Motoru kışa hazırla: 7 madde.", "metin": "Kışın sürmeyeceksen garaja çekmeden önce bu listeyi kaydet." },
+    { "sablon": "liste", "numara_baslangic": 1, "ogeler": [{"baslik": "Aküyü koru.", "metin": "Akıllı şarj cihazına bağla ya da sök; serin ve kuru yerde sakla."}, {"baslik": "Depoyu doldur.", "metin": "Dolu depo içeride paslanmayı ve yoğuşmayı azaltır. Uzun bekleyecekse yakıt katkısı kullan."}, {"baslik": "Lastikleri unutma.", "metin": "Soğukta basınç düşer; ayda bir kontrol et, mümkünse motoru sehpaya al."}, {"baslik": "Zinciri temizle, yağla.", "metin": "Kışa temiz ve yağlı giren zincir baharda seni üzmez."}] },
+    { "sablon": "liste", "numara_baslangic": 5, "ogeler": [{"baslik": "Yağı değiştir.", "metin": "Kullanılmış yağdaki kir ve asit uzun beklemede motora zarar verebilir; yağ ve filtreyi kışa girmeden değiştir."}, {"baslik": "Antifrizi kontrol et.", "metin": "Su soğutmalı motorda soğutma sıvısının donma derecesine baktır."}, {"baslik": "Temizle, kurula, ört.", "metin": "Nefes alan bir örtü nemi içeride tutmaz."}] },
+    { "sablon": "kapanis", "zemin": "turuncu", "baslik": "Bakımı servise mi bırakacaksın?", "metin": "RevvRide’da yakınındaki doğrulanmış servisleri bul, bakım talebi aç, teklifleri karşılaştır.", "ekran": "servisler" }
+  ]
+}

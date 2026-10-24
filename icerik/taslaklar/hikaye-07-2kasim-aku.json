@@ -1,0 +1,9 @@
+{
+  "id": "hikaye-07-2kasim-aku",
+  "zaman": "2026-11-02T19:00:00+03:00",
+  "tur": "hikaye",
+  "baslik": "Hikâye: Akü kışın yorulur",
+  "kareler": [
+    { "sablon": "hikaye", "zemin": "turuncu", "baslik": "Akü kışın yorulur.", "metin": "Uzun süre sürmeyeceksen aküyü akıllı şarj cihazına bağla ya da sök, serin ve kuru yerde sakla." }
+  ]
+}

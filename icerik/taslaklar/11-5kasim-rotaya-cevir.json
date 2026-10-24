@@ -1,0 +1,15 @@
+{
+  "id": "11-5kasim-rotaya-cevir",
+  "zaman": "2026-11-05T20:00:00+03:00",
+  "tur": "kaydirmali",
+  "baslik": "Sürüşünü rotaya çevir",
+  "metin": "En güzel yolu bir kez sür, rotası hep cebinde olsun. 🛣️\n\nRevvRide sürüşünü kaydeder; rotaya çevirdiğinde viraj sayısı ve kıvrımlılık kendiliğinden hesaplanır. Mola verdiğin kafeyi, benzinliği, manzara noktasını rotana ekleyebilir, istersen rotayı herkesle paylaşabilirsin.\n\nYakında App Store ve Google Play'de. Haberdar olmak için takip et.\n\n#RevvRide #virajlıyollar #rota #motosiklet #motorcu",
+  "alt": "Sürüşü rotaya çevirmenin adımları: sürüşe başla, mola yerini işaretle, rotaya çevir, paylaş.",
+  "kareler": [
+    { "sablon": "kapak", "baslik": "Sürüşünü rotaya çevir.", "metin": "En güzel yolu bir kez sür, rotası hep cebinde olsun.", "ekran": "ana-sayfa" },
+    { "sablon": "ipucu", "no": "01", "baslik": "Sürüşe başla.", "metin": "Tek dokunuş: sürüşün kaydedilir, önündeki tehlikeler kaskına okunur." },
+    { "sablon": "ipucu", "no": "02", "baslik": "Mola verdin mi? Sorar.", "metin": "Bir yerde 5 dakika durunca nerede olduğunu sorar: kafe, yemek, benzinlik, konaklama, manzara ya da dinlenme. İstersen “Geç” dersin." },
+    { "sablon": "ipucu", "no": "03", "baslik": "Rotaya çevir.", "metin": "Kaydettiğin sürüşü rota yap; viraj sayısı ve kıvrımlılık kendiliğinden hesaplanır, mola yerlerini rotana eklersin." },
+    { "sablon": "kapanis", "zemin": "turuncu", "baslik": "İstersen herkesle paylaş.", "metin": "Paylaştığın rotayı diğer sürücüler keşfeder, sürer ve puanlar.", "ekran": "akis" }
+  ]
+}

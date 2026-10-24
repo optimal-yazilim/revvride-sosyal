@@ -1,0 +1,14 @@
+{
+  "id": "09-31ekim-tehlikeler",
+  "zaman": "2026-10-31T10:00:00+03:00",
+  "tur": "kaydirmali",
+  "baslik": "Kaskından duyacağın 12 tehlike",
+  "metin": "Çukur, mıcır, yağ, kaygan rögar, sis… Yolda ne varsa kaskından duy. ⚠️\n\nRevvRide'da sürücüler gördükleri tehlikeyi tek dokunuşla bildirir; sen yaklaşırken ikaz intercom'undan okunur. Geçerken \"Hâlâ orada\" ya da \"Artık yok\" dersin, bilgi güncel kalır.\n\nSence en tehlikelisi hangisi? Yorumlara yaz 👇\n\n#RevvRide #motosiklet #güvenlisürüş #motorcu #kask",
+  "alt": "Uygulamada bildirilebilen 12 yol tehlikesi: çukur, mıcır, yağ, moloz, kaygan rögar, buzlanma, su birikintisi, yan rüzgâr, sis, kaza, yolda hayvan, yol çalışması.",
+  "kareler": [
+    { "sablon": "kapak", "baslik": "Yolda ne varsa kaskından duy.", "metin": "Sürücülerin bildirdiği tehlikeler, sen yaklaşırken intercom’undan okunur.", "ekran": "surus" },
+    { "sablon": "izgara", "zemin": "acik", "baslik": "Bildirebileceğin 12 tehlike", "ogeler": [{"etiket": "Çukur"}, {"etiket": "Mıcır"}, {"etiket": "Yağ / mazot"}, {"etiket": "Moloz"}, {"etiket": "Kaygan rögar"}, {"etiket": "Buzlanma"}, {"etiket": "Su birikintisi"}, {"etiket": "Yan rüzgâr"}, {"etiket": "Sis"}, {"etiket": "Kaza"}, {"etiket": "Yolda hayvan"}, {"etiket": "Yol çalışması"}] },
+    { "sablon": "kapak", "zemin": "koyu", "baslik": "Bildirmek tek dokunuş.", "metin": "Gördüğün tehlikeyi sürüş ekranından tek dokunuşla ya da “Hey RevvRide, yağ var” diyerek bildir. Bildirimlerin adın olmadan paylaşılır.", "ekran": "surus" },
+    { "sablon": "kapanis", "zemin": "turuncu", "baslik": "Hâlâ orada mı?", "metin": "Geçerken “Hâlâ orada” ya da “Artık yok” de; bilgi sürücülerle güncel kalır. İkazlar yardımcıdır, yolu her zaman kendi gözünle oku." }
+  ]
+}

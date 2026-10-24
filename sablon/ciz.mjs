@@ -8,6 +8,9 @@
  *   node sablon/ciz.mjs --hepsi      değişmemiş olanları da yeniden çiz
  *
  * Her çalışma sonucu durum/ciz-raporu.json'a yazar (hata olsa da).
+ *
+ * Profil ızgarası: gönderilerin kapak zemini otomatik seçilir (açık → turuncu → açık → koyu), böylece
+ * profilde yan yana ya da alt alta aynı tonda kapak gelmez. Ayrıntı kapakTonlari()'nda.
  */
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -17,7 +20,7 @@ import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 import { metinDenetle } from '../scripts/kurallar.mjs';
-import { ALANLAR, ICON, boyut, kareHtml } from './sablonlar.mjs';
+import { ALANLAR, boyut, kareHtml, zeminTonu } from './sablonlar.mjs';
 
 const KOK = resolve(import.meta.dirname, '..');
 const TASLAK = join(KOK, 'icerik', 'taslaklar');
@@ -50,19 +53,16 @@ function denetle(t, dosya) {
     for (const a of tanim.zorunlu) if (k[a] === undefined || k[a] === '' || (Array.isArray(k[a]) && !k[a].length)) s.push(`${yer}: "${a}" zorunlu`);
     for (const [a, sinir] of Object.entries(tanim.sinir)) if (typeof k[a] === 'string' && k[a].length > sinir) s.push(`${yer}: "${a}" ${k[a].length} karakter (en fazla ${sinir})`);
     for (const [a, izinli] of Object.entries(tanim.secenek ?? {})) if (k[a] !== undefined && !izinli.includes(k[a])) s.push(`${yer}: "${a}" şunlardan biri olmalı: ${izinli.join(', ')}`);
-    if (k.ikon && !ICON[k.ikon]) s.push(`${yer}: simge "${k.ikon}" yok`);
     if (k.ekran && !EKRANLAR.includes(k.ekran)) s.push(`${yer}: ekran "${k.ekran}" yok (${EKRANLAR.join(', ')})`);
     if (k.sablon === 'izgara') {
       if (k.ogeler.length < 3 || k.ogeler.length > 12) s.push(`${yer}: ızgarada 3–12 öğe olmalı`);
       k.ogeler.forEach((o, m) => {
-        if (!ICON[o.ikon]) s.push(`${yer}, öğe ${m + 1}: simge "${o.ikon}" yok`);
         if ((o.etiket ?? '').length > 18 || !o.etiket) s.push(`${yer}, öğe ${m + 1}: etiket 1–18 karakter olmalı`);
       });
     }
     if (k.sablon === 'liste') {
       if (k.ogeler.length < 2 || k.ogeler.length > 4) s.push(`${yer}: listede 2–4 öğe olmalı`);
       k.ogeler.forEach((o, m) => {
-        if (!ICON[o.ikon]) s.push(`${yer}, öğe ${m + 1}: simge "${o.ikon}" yok`);
         if (!o.baslik || o.baslik.length > 30) s.push(`${yer}, öğe ${m + 1}: başlık 1–30 karakter olmalı`);
         if (!o.metin || o.metin.length > 110) s.push(`${yer}, öğe ${m + 1}: metin 1–110 karakter olmalı`);
       });
@@ -136,6 +136,46 @@ async function chromeAc() {
   };
 }
 
+// ------------------------------------------------------------------ profil ızgarası
+const AILE = { acik: 'acik', turuncu: 'sicak', kirmizi: 'sicak', koyu: 'koyu' };
+
+/**
+ * Akıştaki gönderileri (hikâyeler hariç) zamana göre dizer ve paylaşılmamış taslakların kapak zeminini seçer.
+ * Profil 3 sütunlu olduğundan bir gönderinin yanında bir önceki/sonraki, altında ve üstünde üç önceki/sonraki
+ * durur: bunlarla aynı tonda olmamaya, art arda üç kapakta birden fazla koyu olmamaya ve açık → turuncu →
+ * açık → koyu sırasına uymaya çalışır (en az cezalı ton seçilir). Paylaşılmış gönderiler, özel günler ve
+ * zemini seçilemeyen kapaklar sabittir; elle eklenmiş takvim öğelerinin tonu "ton" alanından okunur.
+ * Taslaktaki kapak zemini yok sayılır.
+ */
+function kapakTonlari(taslaklar, takvim, kayit) {
+  const taslakIdleri = new Set(taslaklar.map((t) => t.id));
+  const sira = [
+    ...takvim.ogeler.filter((o) => !taslakIdleri.has(o.id) && o.kaynak !== 'taslak' && o.tur !== 'hikaye').map((o) => ({ id: o.id, zaman: o.zaman, ton: o.ton, sabit: true })),
+    ...taslaklar.filter((t) => t.tur !== 'hikaye').map((t) => {
+      const izinli = ALANLAR[t.kareler[0].sablon].secenek?.zemin;
+      return { id: t.id, zaman: t.zaman, ton: zeminTonu(t.kareler[0]), sabit: kayit[t.id]?.durum === 'paylasildi' || !izinli, izinli, kare: t.kareler[0] };
+    }),
+  ]
+    .filter((s) => kayit[s.id]?.durum !== 'atlandi')
+    .sort((a, b) => new Date(a.zaman) - new Date(b.zaman) || a.id.localeCompare(b.id));
+  sira.forEach((s, i) => {
+    if (s.sabit) return;
+    // Öncekiler zaten seçildi; sonrakilerden yalnızca sabit olanlar bilinir.
+    const [o1, o2, o3] = [1, 2, 3].map((d) => AILE[sira[i - d]?.ton]);
+    const [s1, s2, s3] = [1, 2, 3].map((d) => (sira[i + d]?.sabit ? AILE[sira[i + d].ton] : undefined));
+    const ideal = o1 !== 'acik' ? 'acik' : o2 === 'sicak' ? 'koyu' : 'turuncu';
+    const ceza = (z) => {
+      const a = AILE[z];
+      return 3 * [o1, s1].filter((x) => x === a).length + 2 * [o3, s3].filter((x) => x === a).length
+        + (a === 'koyu' && [o2, o1, s1, s2].includes('koyu') ? 3 : 0) + (z === ideal ? 0 : 1);
+    };
+    const adaylar = [...new Set([ideal, 'acik', 'turuncu', 'koyu'])].filter((z) => s.izinli.includes(z));
+    s.ton = adaylar.reduce((en, z) => (ceza(z) < ceza(en) ? z : en));
+    s.kare.zemin = s.ton;
+  });
+  return sira;
+}
+
 // ------------------------------------------------------------------ ana akış
 const dosyalar = existsSync(TASLAK) ? readdirSync(TASLAK).filter((f) => f.endsWith('.json')).sort() : [];
 const ayarlar = okuJson(join(KOK, 'icerik', 'ayarlar.json'), {});
@@ -158,13 +198,20 @@ const sablonSurumu = createHash('sha256').update(readFileSync(join(KOK, 'sablon'
 const cizim = okuJson(join(KOK, 'durum', 'cizim.json'), {});
 const takvimYolu = join(KOK, 'icerik', 'takvim.json');
 const takvim = okuJson(takvimYolu, { ogeler: [] });
+const kayit = okuJson(join(KOK, 'durum', 'yayinlananlar.json'), {});
+
+const sira = kapakTonlari(taslaklar, takvim, kayit);
+rapor.profil = sira.filter((s) => !kayit[s.id]).map((s) => `${s.zaman.slice(0, 10)} ${s.ton ?? '?'} ${s.id}`);
+console.log(`Profil sırası (sıradaki gönderilerin kapak zemini):\n  ${rapor.profil.join('\n  ')}\n`);
 
 if (!SADECE_DENETLE) {
   const yapilacak = taslaklar.filter((t) => {
     const ozet = createHash('sha256').update(JSON.stringify(t.kareler)).update(sablonSurumu).digest('hex').slice(0, 16);
     t._ozet = ozet;
-    const tamam = cizim[t.id] === ozet && t.kareler.every((_, j) => existsSync(join(KOK, 'gorseller', t.id, `${j + 1}.jpg`)));
-    return HEPSI || !tamam;
+    const dosyalarVar = t.kareler.every((_, j) => existsSync(join(KOK, 'gorseller', t.id, `${j + 1}.jpg`)));
+    // Paylaşılmış gönderinin görselleri Instagram'dakiyle aynı kalsın.
+    if (kayit[t.id]?.durum === 'paylasildi' && dosyalarVar) return false;
+    return HEPSI || cizim[t.id] !== ozet || !dosyalarVar;
   });
   if (yapilacak.length) {
     const chrome = await chromeAc();

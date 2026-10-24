@@ -1,0 +1,11 @@
+{
+  "id": "07-27ekim-konvoy",
+  "zaman": "2026-10-27T20:00:00+03:00",
+  "tur": "gonderi",
+  "baslik": "Konvoyda kimse geride kalmaz",
+  "metin": "Pazar kahvaltısına 12 motor çıktınız. Biri ışıkta kaldı; kimse fark etmedi mi? 🏍️\n\nRevvRide'da kulüp etkinliğinden konvoyu başlatırsın; \"Katılıyorum\" diyenler kod girmeden katılır. Herkes haritada görünür, biri geride kalırsa herkes kaskından duyar.\n\nKulübünü etiketle 👇\n\n#RevvRide #konvoy #motosikletkulübü #motorcu #motosiklet",
+  "alt": "Turuncu zeminde \"Konvoyda kimse geride kalmaz.\" başlığı, \"Dikkat, arkadaki sürücü koptu\" ikaz kartı ve kulüp etkinliği sayfasını gösteren telefon.",
+  "kareler": [
+    { "sablon": "alinti", "baslik": "Konvoyda kimse geride kalmaz.", "ekran": "etkinlik", "alinti": "Dikkat, arkadaki sürücü koptu. Mert 800 metre geride.", "metin": "Etkinlikten konvoyu başlat; “Katılıyorum” diyenler kod girmeden katılır." }
+  ]
+}

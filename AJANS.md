@@ -30,10 +30,10 @@ Yalnızca `icerik/taslaklar/`, `raporlar/` ve gerekirse `icerik/ayarlar.json`'u 
 
 | Gün | Saat | Ne |
 |---|---|---|
-| Pazartesi | 19:00 | Hikâye: haftanın ipucu (`hikaye`, simgeli) |
+| Pazartesi | 19:00 | Hikâye: haftanın ipucu (`hikaye`) |
 | Salı | 20:00 | Gönderi (çoğunlukla kaydırmalı) |
 | Perşembe | 20:00 | Gönderi (tek görsel ya da kaydırmalı) |
-| Cuma | 19:00 | Hikâye: hafta sonu (`hikaye`, maddeli ya da simgeli) |
+| Cuma | 19:00 | Hikâye: hafta sonu (`hikaye`, maddeli ya da sade) |
 | Cumartesi | 10:00 | Gönderi (kaydırmalı ya da soru) |
 
 Haftada en az bir kaydırmalı gönderi olsun: bilgi veren kaydırmalı gönderiler kaydedilir, kaydedilen içerik
@@ -45,6 +45,17 @@ daha çok kişiye gösterilir.
 - Güvenlikte sorumlu ol: "ikazlar yardımcıdır, yolu her zaman kendi gözünle oku" çizgisini koru.
 - Görsellerin içindeki yazılara emoji koyma (yazı tipinde yok). Gönderi metninde ölçülü emoji olabilir.
 - Türkçe yazım: "kaskından", "Hâlâ", "mekân", "rüzgâr" gibi şapkalı ve doğru ekli yaz.
+
+## Tasarım
+
+- Görsellerde süs simgesi, köşede küçük kategori etiketi ("KONVOY" gibi) ve kare sayacı yok; sahibi bunları
+  yapay zekâ işi gibi buluyor, şablonlar da çizmez. Görsel öğe olarak uygulamanın gerçek ekranlarını
+  (`ekran`) kullan, gerisini büyük başlık ve kısa metin taşısın.
+- **Profil ızgarası:** profilde art arda gelen gönderiler renkçe uyumlu olmalı, art arda koyu kapak olmamalı.
+  Kapak zeminini sen seçmezsin: çizer takvimdeki sıraya bakıp açık → turuncu → açık → koyu düzeninde, yan
+  yana ve alt alta aynı ton gelmeyecek şekilde seçer (taslaktaki kapak `zemin`'i yok sayılır). Seçilen sıra
+  `durum/ciz-raporu.json`'da `profil` altında görünür. Özel gün (`ozel-gun`) kapakları kendi rengindedir.
+- Kaydırmalının iç karelerinde (`kapanis`, iç `kapak` vb.) zemini sen seçersin; art arda iki koyu kare koyma.
 
 ## İçerik dağılımı
 
@@ -156,19 +167,20 @@ Her öğe `icerik/taslaklar/<id>.json` dosyasıdır; dosya adı ile `id` aynı o
 
 ### Şablonlar (1080×1350; hikâye 1080×1920)
 
-Parantez içi sayı en fazla karakterdir. `ekran` ve `ikon` değerleri aşağıdaki listelerden.
+Parantez içi sayı en fazla karakterdir. `ekran` değerleri aşağıdaki listeden. `zemin` gönderinin ilk
+karesinde otomatik seçilir (yukarıda *Tasarım*); yazdığın değer yalnızca iç karelerde geçerlidir.
 
 | Şablon | Alanlar | Ne için |
 |---|---|---|
-| `kapak` | `zemin` (koyu/turuncu/acik), `etiket` (22), `baslik` (44), `metin` (140), `ekran` ya da `ikon` | Kaydırmalının ilk karesi; tek görselde de olur |
-| `ipucu` | `no` ("01"), `ikon`, `baslik` (50), `metin` (220), `not` (110) | Numaralı madde |
-| `kapanis` | `zemin` (turuncu/koyu), `baslik` (44), `metin` (170), `ekran` ya da `ikon`, `rozet: false` (mağaza yazısını gizler) | Son kare: uygulamaya bağla |
-| `izgara` | `zemin` (acik/turuncu), `baslik` (44), `ogeler`: 3–12 × `{ikon, etiket (18)}` | Liste hâlinde türler/özellikler |
-| `liste` | `ogeler`: 2–4 × `{ikon, baslik (30), metin (110)}`, `numara_baslangic` (ör. 1) | Kontrol listesi |
+| `kapak` | `zemin` (koyu/turuncu/acik), `baslik` (44), `metin` (140), `ekran` | Kaydırmalının ilk karesi; tek görselde de olur |
+| `ipucu` | `no` ("01", büyük turuncu numara olur), `baslik` (50), `metin` (220), `not` (110) | Numaralı madde |
+| `kapanis` | `zemin` (turuncu/koyu), `baslik` (44), `metin` (170), `ekran`, `rozet: false` (mağaza yazısını gizler) | Son kare: uygulamaya bağla |
+| `izgara` | `zemin` (acik/turuncu), `baslik` (44), `ogeler`: 3–12 × `{etiket (18)}` | Liste hâlinde türler/özellikler |
+| `liste` | `ogeler`: 2–4 × `{baslik (30), metin (110)}`, `numara_baslangic` (ör. 1) | Kontrol listesi |
 | `alinti` | `zemin` (acik/turuncu/koyu), `baslik` (32), `alinti` (70), `kart_etiketi` (22, varsayılan "KASKTA DUYDUĞUN"), `metin` (110), `ekran` | Uygulamanın kaskta söylediği bir cümle |
-| `soru` | `baslik` (60), `metin` (120), `rozet` (24) | Yorum toplayan tek görsel |
+| `soru` | `zemin` (koyu/turuncu/acik), `baslik` (60), `metin` (120), `rozet` (24) | Yorum toplayan tek görsel |
 | `ozel-gun` | `renk` (kirmizi/koyu/turuncu), `buyuk` (12), `baslik` (60), `alt` (30) | Bayram ve anma |
-| `hikaye` | `zemin` (turuncu/koyu), `etiket` (22), `baslik` (50), `metin` (150), `ikon` ya da `maddeler` (en fazla 5 × 30) | Hikâye |
+| `hikaye` | `zemin` (turuncu/koyu), `baslik` (50), `metin` (150), `maddeler` (en fazla 5 × 30) | Hikâye |
 
 **Ekranlar** (uygulamanın gerçek ekranları): `ana-sayfa` (Sürüşe başla, kısayollar), `surus` (sürüş ekranı,
 61 km/s, çukur ikazı), `akis` (paylaşılan rotalar, tarz filtresi), `mekanlar` (motor dostu mekân listesi),
@@ -176,12 +188,7 @@ Parantez içi sayı en fazla karakterdir. `ekran` ve `ikon` değerleri aşağıd
 `yardim-agi` (SOS yardım ağı), `kaskina-bagla` (intercom kurulum rehberi).
 
 `surus` sürüş ekranının **sade görünümüdür** (harita yok). Sürüş haritasını anlatan gönderide `surus`'u
-"haritalı ekran" diye sunma; `ikon: "map"` kullan. Haritalı görünümün gerçek ekran görüntüsü telefon
+"haritalı ekran" diye sunma; o karede ekran kullanma. Haritalı görünümün gerçek ekran görüntüsü telefon
 derlemesinden çekilince `harita` adıyla buraya eklenecek.
-
-**Simgeler:** alert, route, users, shield, helmet, headphones, volume, mic, check, flag, pin, phone,
-motorcycle, leaf, thermometer, fog, moon, sun, layers, manhole, bluetooth, coffee, tag, umbrella, wrench,
-hand, zigzag, battery, fuel, gauge, link, droplet, snowflake, wind, pothole, gravel, debris, paw, cone,
-bell, lock, calendar, map, star, camera, heart.
 
 Yazı sığmazsa başlık kendiliğinden küçülür; yine sığmazsa çizim `HATA: yazı sığmadı` der, metni kısalt.
