@@ -54,17 +54,16 @@ daha çok kişiye gösterilir.
 - **Profil ızgarası:** profilde art arda gelen gönderiler renkçe uyumlu olmalı, art arda koyu kapak olmamalı.
   Kapak zeminini sen seçmezsin: çizer takvimdeki sıraya bakıp açık → turuncu → açık → koyu düzeninde, yan
   yana ve alt alta aynı ton gelmeyecek şekilde seçer (taslaktaki kapak `zemin`'i yok sayılır). Seçilen sıra
-  `durum/ciz-raporu.json`'da `profil` altında görünür. Özel gün (`ozel-gun`) kapakları kendi rengindedir.
+  `durum/ciz-raporu.json`'da `profil` altında görünür.
 - Kaydırmalının iç karelerinde (`kapanis`, iç `kapak` vb.) zemini sen seçersin; art arda iki koyu kare koyma.
 
 ## İçerik dağılımı
 
 | Sütun | Pay | Örnek konular |
 |---|---|---|
-| Güvenlik ve bilgi | %40 | mevsime göre sürüş, bakım, ekipman, konvoy kuralları, el işaretleri |
-| Uygulama | %30 | aşağıdaki gerçek özelliklerden biri, ekran görüntüsüyle |
+| Güvenlik ve bilgi | %45 | mevsime göre sürüş, bakım, ekipman, konvoy kuralları, el işaretleri |
+| Uygulama | %35 | aşağıdaki gerçek özelliklerden biri, ekran görüntüsüyle |
 | Topluluk | %20 | soru gönderileri, "favori yolun", "kulübünü etiketle", tarz soruları |
-| Özel gün | %10 | aşağıdaki liste |
 
 Aynı konuyu 6 hafta içinde tekrarlama (takvimdeki başlıklara bak). `durum/istatistik.json`'da kaydetme ve
 paylaşma sayısı yüksek çıkan türü daha sık, ilgi görmeyeni daha seyrek kullan.
@@ -130,18 +129,9 @@ uyduğun anlamına gelmez.
 
 ## Özel günler
 
-| Tarih | Ne yapılır |
-|---|---|
-| 1 Ocak | Sade yeni yıl kutlaması, 10:00 |
-| 23 Nisan | Ulusal Egemenlik ve Çocuk Bayramı kutlaması |
-| 19 Mayıs | Atatürk'ü Anma, Gençlik ve Spor Bayramı kutlaması |
-| 15 Temmuz | Demokrasi ve Millî Birlik Günü: sade anma, o gün ürün gönderisi yok |
-| 30 Ağustos | Zafer Bayramı kutlaması |
-| 29 Ekim | Cumhuriyet Bayramı kutlaması (yıl: 1923'ten bu yana kaçıncı yıl olduğunu hesapla) |
-| 10 Kasım | 09:05'te sade anma (`ozel-gun`, `koyu`); **o gün başka gönderi ve hikâye yok**, Salı gönderisi Çarşamba'ya kayar |
-
-Dini bayramlarda tarihi kesin biliyorsan sade bir kutlama yap; emin değilsen paylaşma. Özel gün
-gönderilerinde ürün anlatılmaz, en fazla 2–3 etiket kullanılır.
+Bayram, anma, yılbaşı gibi **özel gün gönderisi ya da hikâyesi yapılmaz** (sahibinin isteği); 29 Ekim,
+10 Kasım gibi günlere özel içerik hazırlama, metinlere kutlama ya da anma ifadesi koyma. 10 Kasım ve
+15 Temmuz'da hiç paylaşım yapma; o güne düşen gönderi ertesi güne kayar.
 
 Mevsim: Kasım–Şubat kış sürüşü, bakım, ekipman, garaj; Mart–Mayıs sezon açılışı ve ilk sürüş kontrolleri;
 Haziran–Ağustos sıcakta sürüş, uzun yol, su içmek; Eylül–Ekim sonbahar (yaprak, sis, kısalan gün).
@@ -179,7 +169,6 @@ karesinde otomatik seçilir (yukarıda *Tasarım*); yazdığın değer yalnızca
 | `liste` | `ogeler`: 2–4 × `{baslik (30), metin (110)}`, `numara_baslangic` (ör. 1) | Kontrol listesi |
 | `alinti` | `zemin` (acik/turuncu/koyu), `baslik` (32), `alinti` (70), `kart_etiketi` (22, varsayılan "KASKTA DUYDUĞUN"), `metin` (110), `ekran` | Uygulamanın kaskta söylediği bir cümle |
 | `soru` | `zemin` (koyu/turuncu/acik), `baslik` (60), `metin` (120), `rozet` (24) | Yorum toplayan tek görsel |
-| `ozel-gun` | `renk` (kirmizi/koyu/turuncu), `buyuk` (12), `baslik` (60), `alt` (30) | Bayram ve anma |
 | `hikaye` | `zemin` (turuncu/koyu), `baslik` (50), `metin` (150), `maddeler` (en fazla 5 × 30) | Hikâye |
 
 **Ekranlar** (uygulamanın gerçek ekranları): `ana-sayfa` (Sürüşe başla, kısayollar), `surus` (sürüş ekranı,

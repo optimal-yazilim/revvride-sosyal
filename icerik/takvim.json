@@ -800,18 +800,6 @@
       "kaynak": "taslak"
     },
     {
-      "id": "08-29ekim-cumhuriyet",
-      "zaman": "2026-10-29T10:00:00+03:00",
-      "tur": "gonderi",
-      "baslik": "29 Ekim Cumhuriyet Bayramı",
-      "gorseller": [
-        "gorseller/08-29ekim-cumhuriyet/1.jpg"
-      ],
-      "metin": "Cumhuriyetimizin 103. yılı kutlu olsun. 🇹🇷\n\nBugün yola çıkan tüm sürücülere iyi yolculuklar; konvoyda birbirinize göz kulak olun.\n\n#29Ekim #CumhuriyetBayramı #RevvRide",
-      "alt": "Kırmızı zeminde beyaz yazıyla \"29 Ekim\" ve \"Cumhuriyetimizin 103. yılı kutlu olsun.\"",
-      "ton": "kirmizi"
-    },
-    {
       "id": "09-31ekim-tehlikeler",
       "zaman": "2026-10-31T10:00:00+03:00",
       "tur": "kaydirmali",
@@ -897,18 +885,6 @@
       "gorseller": [
         "gorseller/hikaye-9kasim-islak-zemin/1.jpg"
       ],
-      "kaynak": "taslak"
-    },
-    {
-      "id": "10kasim-anma",
-      "zaman": "2026-11-10T09:05:00+03:00",
-      "tur": "gonderi",
-      "baslik": "10 Kasım",
-      "gorseller": [
-        "gorseller/10kasim-anma/1.jpg"
-      ],
-      "metin": "Cumhuriyetimizin kurucusu Gazi Mustafa Kemal Atatürk'ü vefatının 88. yılında saygı, minnet ve özlemle anıyoruz. 🇹🇷\n\n#10Kasım #Atatürk",
-      "alt": "Koyu zeminde beyaz yazıyla \"10 Kasım\" ve \"Saygı, minnet ve özlemle anıyoruz.\"",
       "kaynak": "taslak"
     },
     {

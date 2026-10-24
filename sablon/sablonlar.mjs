@@ -21,24 +21,19 @@ export const ALANLAR = {
   liste: { zorunlu: ['ogeler'], sinir: {} },
   alinti: { zorunlu: ['baslik', 'alinti', 'ekran'], sinir: { baslik: 32, kart_etiketi: 22, alinti: 70, metin: 110 }, secenek: { zemin: ['acik', 'turuncu', 'koyu'] } },
   soru: { zorunlu: ['baslik'], sinir: { baslik: 60, metin: 120, rozet: 24 }, secenek: { zemin: ['koyu', 'turuncu', 'acik'] } },
-  'ozel-gun': { zorunlu: ['buyuk', 'baslik'], sinir: { buyuk: 12, baslik: 60, alt: 30 }, secenek: { renk: ['kirmizi', 'koyu', 'turuncu'] } },
   hikaye: { zorunlu: ['baslik'], sinir: { baslik: 50, metin: 150 }, secenek: { zemin: ['turuncu', 'koyu'] } },
 };
 
 /** Zemin seçilmezse kullanılan; zemini olmayan şablonların sabit tonu. */
 const VARSAYILAN_ZEMIN = { kapak: 'koyu', ipucu: 'acik', kapanis: 'turuncu', izgara: 'acik', liste: 'acik', alinti: 'acik', soru: 'koyu', hikaye: 'turuncu' };
 
-/** Karenin zemin tonu: acik, turuncu, koyu ya da kirmizi (profil ızgarasının renk sırası için). */
-export const zeminTonu = (k) => {
-  if (k.sablon === 'ozel-gun') return k.renk ?? 'kirmizi';
-  return (ALANLAR[k.sablon]?.secenek?.zemin && k.zemin) || VARSAYILAN_ZEMIN[k.sablon];
-};
+/** Karenin zemin tonu: acik, turuncu ya da koyu (profil ızgarasının renk sırası için). */
+export const zeminTonu = (k) => (ALANLAR[k.sablon]?.secenek?.zemin && k.zemin) || VARSAYILAN_ZEMIN[k.sablon];
 
 const BG = {
   turuncu: `radial-gradient(130% 80% at 15% 0%, #ff6b2c 0%, #ff3600 48%, #c22c00 100%)`,
   koyu: `radial-gradient(120% 70% at 85% 100%, #3a1205 0%, #141416 55%, #0b0b0d 100%)`,
   acik: `linear-gradient(170deg, #fff7f2 0%, #ffe9dd 100%)`,
-  kirmizi: `radial-gradient(120% 80% at 20% 0%, #f0303c 0%, #e30a17 50%, #a8000c 100%)`,
 };
 const koyuMu = (z) => z !== 'acik';
 const kac = (s = '') => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -168,14 +163,6 @@ export function kareHtml(k, ctx) {
           ${k.metin ? `<p style="font-size:40px;margin-right:120px;color:${koyuMu(z) ? 'rgba(255,255,255,.9)' : '#3f3f46'}">${kac(k.metin)}</p>` : ''}
         </div>
         <div class="abs pill" style="left:80px;bottom:110px;padding:24px 36px;background:${z === 'turuncu' ? '#fff' : ORANGE};color:${z === 'turuncu' ? ORANGE : '#fff'};font-size:34px">${kac(k.rozet ?? 'Yorumlara yaz ↓')}</div>`);
-    case 'ozel-gun':
-      return page(W, H, BG[z], `
-        <div class="abs col" data-sigdir style="left:60px;right:60px;top:300px;bottom:220px;align-items:center;text-align:center;gap:34px">
-          <h1 style="font-size:230px;letter-spacing:-0.04em;line-height:.95">${kac(k.buyuk)}</h1>
-          <div style="font-weight:800;font-size:64px;line-height:1.15;letter-spacing:-0.02em;max-width:880px">${kac(k.baslik)}</div>
-          ${k.alt ? `<div style="margin-top:30px;font-weight:700;font-size:34px;letter-spacing:.3em;opacity:.85">${kac(k.alt)}</div>` : ''}
-        </div>
-        <img class="abs" src="${ctx.logo('beyaz')}" style="left:50%;transform:translateX(-50%);bottom:80px;width:190px">`);
     case 'hikaye':
       return page(1080, 1920, BG[z], `${road(1080, 1920, z === 'koyu' ? ORANGE : '#fff', z === 'koyu' ? 0.8 : 1)}
         <div class="abs col" data-sigdir style="left:80px;right:80px;top:250px;height:${k.maddeler ? 1250 : 950}px;justify-content:center;gap:44px">

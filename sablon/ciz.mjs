@@ -137,14 +137,14 @@ async function chromeAc() {
 }
 
 // ------------------------------------------------------------------ profil ızgarası
-const AILE = { acik: 'acik', turuncu: 'sicak', kirmizi: 'sicak', koyu: 'koyu' };
+const AILE = { acik: 'acik', turuncu: 'sicak', koyu: 'koyu' };
 
 /**
  * Akıştaki gönderileri (hikâyeler hariç) zamana göre dizer ve paylaşılmamış taslakların kapak zeminini seçer.
  * Profil 3 sütunlu olduğundan bir gönderinin yanında bir önceki/sonraki, altında ve üstünde üç önceki/sonraki
  * durur: bunlarla aynı tonda olmamaya, art arda üç kapakta birden fazla koyu olmamaya ve açık → turuncu →
- * açık → koyu sırasına uymaya çalışır (en az cezalı ton seçilir). Paylaşılmış gönderiler, özel günler ve
- * zemini seçilemeyen kapaklar sabittir; elle eklenmiş takvim öğelerinin tonu "ton" alanından okunur.
+ * açık → koyu sırasına uymaya çalışır (en az cezalı ton seçilir). Paylaşılmış gönderiler ve zemini
+ * seçilemeyen kapaklar sabittir; elle eklenmiş takvim öğelerinin tonu "ton" alanından okunur.
  * Taslaktaki kapak zemini yok sayılır.
  */
 function kapakTonlari(taslaklar, takvim, kayit) {

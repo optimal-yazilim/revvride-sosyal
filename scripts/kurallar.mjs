@@ -6,6 +6,7 @@ export const YASAK = [
   [/kaza(yı)?\s*algıla|düşme\s*algıla|otomatik\s*(sos|yardım)/i, 'kaza algılama uygulamada yok'],
   [/ekran\s*kapalı/i, 'ekran kapalıyken kayıt uygulamada yok'],
   [/%\s*100\s*güvenli|kazasız|hayat kurtar/i, 'abartılı güvenlik vaadi'],
+  [/kutlu\s*olsun|bayram\S*\s+kutlu|cumhuriyet\s*bayram|atatürk|minnet\S*\s+ve\s+özlem|anıyoruz/i, 'özel gün içeriği yapılmıyor (sahibinin isteği)'],
 ];
 
 /** Gönderi metni ve görsel yazıları için ortak denetim; hata mesajlarını döner. */
