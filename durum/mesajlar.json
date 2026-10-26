@@ -1,19 +1,42 @@
 {
   "izin": true,
-  "yanitlanan": {},
-  "konusma": {},
+  "yanitlanan": {
+    "72388a8c3e99d1af": "2026-10-26T20:12:14.405Z"
+  },
+  "konusma": {
+    "d6e32bb33bb901d0": {
+      "zaman": "2026-10-26T20:12:14.405Z",
+      "konu": "cikis",
+      "gun": "2026-10-26",
+      "sayi": 1
+    }
+  },
   "sayac": {
-    "cikis": 4,
+    "cikis": 5,
     "hikaye-yaniti": 1,
     "diger": 1,
     "selam": 1,
     "nasil-kullanilir": 1
   },
   "insan_bekleyen": 2,
-  "son_kontrol": "2026-10-26T19:57:53.217Z",
+  "son_kontrol": "2026-10-26T20:12:14.405Z",
   "gorunen": {
     "konusma": 6,
-    "son_24_saat": 0
+    "son_24_saat": 1
   },
-  "son_teshis": []
+  "son_teshis": [
+    {
+      "mesaj": 3,
+      "metinli": 3,
+      "kimden_var": 3,
+      "bizden": 1,
+      "yeni": 1,
+      "alanlar": [
+        "created_time",
+        "from",
+        "id",
+        "message"
+      ]
+    }
+  ]
 }
