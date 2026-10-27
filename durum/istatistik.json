@@ -1,11 +1,24 @@
 {
-  "guncellendi": "2026-10-27T03:37:35.536Z",
+  "guncellendi": "2026-10-27T23:44:39.137Z",
   "hesap": {
     "kullanici": "revvrideapp",
-    "takipci": 325,
-    "gonderi_sayisi": 13
+    "takipci": 322,
+    "gonderi_sayisi": 14
   },
   "gonderiler": [
+    {
+      "takvim_id": "07-27ekim-konvoy",
+      "tarih": "2026-10-27T17:02:18+0000",
+      "tur": "IMAGE",
+      "ilk_satir": "Pazar kahvaltısına 12 motor çıktınız. Biri ışıkta kaldı; kimse fark etmedi mi? \ud83c",
+      "begeni": 0,
+      "yorum": 0,
+      "erisim": 5,
+      "kaydetme": 0,
+      "paylasim": 0,
+      "etkilesim": 0,
+      "baglanti": "https://www.instagram.com/p/DfAWO6olq0-/"
+    },
     {
       "takvim_id": "06-24ekim-konvoy-adabi",
       "tarih": "2026-10-24T07:00:45+0000",
