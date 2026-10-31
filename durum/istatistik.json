@@ -1,11 +1,24 @@
 {
-  "guncellendi": "2026-10-30T11:59:53.368Z",
+  "guncellendi": "2026-10-31T08:07:52.252Z",
   "hesap": {
     "kullanici": "revvrideapp",
-    "takipci": 322,
-    "gonderi_sayisi": 14
+    "takipci": 321,
+    "gonderi_sayisi": 15
   },
   "gonderiler": [
+    {
+      "takvim_id": "09-31ekim-tehlikeler",
+      "tarih": "2026-10-31T07:10:22+0000",
+      "tur": "CAROUSEL_ALBUM",
+      "ilk_satir": "Çukur, mıcır, yağ, kaygan rögar, sis… Yolda ne varsa kaskından duy. ⚠️",
+      "begeni": 0,
+      "yorum": 0,
+      "erisim": 1,
+      "kaydetme": 0,
+      "paylasim": 0,
+      "etkilesim": 0,
+      "baglanti": "https://www.instagram.com/p/DfJlrB-kSJA/"
+    },
     {
       "takvim_id": "07-27ekim-konvoy",
       "tarih": "2026-10-27T17:02:18+0000",
@@ -169,7 +182,7 @@
       "ilk_satir": "Pazar kahvaltısı kulüple daha güzel. ☕",
       "begeni": 0,
       "yorum": 0,
-      "erisim": 11,
+      "erisim": 12,
       "kaydetme": 0,
       "paylasim": 0,
       "etkilesim": 0,
