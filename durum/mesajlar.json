@@ -1,16 +1,7 @@
 {
   "izin": true,
-  "yanitlanan": {
-    "72388a8c3e99d1af": "2026-10-26T20:12:14.405Z"
-  },
-  "konusma": {
-    "d6e32bb33bb901d0": {
-      "zaman": "2026-10-26T20:12:14.405Z",
-      "konu": "cikis",
-      "gun": "2026-10-26",
-      "sayi": 1
-    }
-  },
+  "yanitlanan": {},
+  "konusma": {},
   "sayac": {
     "cikis": 5,
     "hikaye-yaniti": 1,
@@ -19,7 +10,7 @@
     "nasil-kullanilir": 1
   },
   "insan_bekleyen": 2,
-  "son_kontrol": "2026-11-02T20:08:47.108Z",
+  "son_kontrol": "2026-11-02T20:23:10.418Z",
   "gorunen": {
     "konusma": 6,
     "son_24_saat": 0
