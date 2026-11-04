@@ -1,11 +1,24 @@
 {
-  "guncellendi": "2026-11-03T16:37:50.832Z",
+  "guncellendi": "2026-11-04T12:49:40.012Z",
   "hesap": {
     "kullanici": "revvrideapp",
     "takipci": 321,
-    "gonderi_sayisi": 15
+    "gonderi_sayisi": 16
   },
   "gonderiler": [
+    {
+      "takvim_id": "10-3kasim-kis-bakimi",
+      "tarih": "2026-11-03T17:01:25+0000",
+      "tur": "CAROUSEL_ALBUM",
+      "ilk_satir": "Sezonu kapatıyorsan motoru öylece garaja çekme. 🔧",
+      "begeni": 0,
+      "yorum": 0,
+      "erisim": 4,
+      "kaydetme": 0,
+      "paylasim": 0,
+      "etkilesim": 0,
+      "baglanti": "https://www.instagram.com/p/DfSXstKkS7q/"
+    },
     {
       "takvim_id": "09-31ekim-tehlikeler",
       "tarih": "2026-10-31T07:10:22+0000",
@@ -13,7 +26,7 @@
       "ilk_satir": "Çukur, mıcır, yağ, kaygan rögar, sis… Yolda ne varsa kaskından duy. ⚠️",
       "begeni": 0,
       "yorum": 0,
-      "erisim": 4,
+      "erisim": 5,
       "kaydetme": 0,
       "paylasim": 0,
       "etkilesim": 0,
