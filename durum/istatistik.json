@@ -1,11 +1,24 @@
 {
-  "guncellendi": "2026-11-13T17:34:30.261Z",
+  "guncellendi": "2026-11-14T13:39:32.379Z",
   "hesap": {
     "kullanici": "revvrideapp",
     "takipci": 306,
-    "gonderi_sayisi": 21
+    "gonderi_sayisi": 23
   },
   "gonderiler": [
+    {
+      "takvim_id": "14kasim-kulubunu-kur",
+      "tarih": "2026-11-14T07:12:49+0000",
+      "tur": "CAROUSEL_ALBUM",
+      "ilk_satir": "Kulübün WhatsApp grubunda mı kayboluyor? 🏍️",
+      "begeni": 0,
+      "yorum": 0,
+      "erisim": 2,
+      "kaydetme": 0,
+      "paylasim": 0,
+      "etkilesim": 0,
+      "baglanti": "https://www.instagram.com/p/DftpFiIkYe6/"
+    },
     {
       "takvim_id": "12kasim-yagmurda-surer-misin",
       "tarih": "2026-11-12T17:10:22+0000",
@@ -91,7 +104,7 @@
       "ilk_satir": "Pazar kahvaltısına 12 motor çıktınız. Biri ışıkta kaldı; kimse fark etmedi mi? \ud83c",
       "begeni": 0,
       "yorum": 0,
-      "erisim": 6,
+      "erisim": 7,
       "kaydetme": 0,
       "paylasim": 0,
       "etkilesim": 0,
